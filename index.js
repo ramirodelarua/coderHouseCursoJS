@@ -15,3 +15,16 @@ function avisoDePago(){
 	}
 }
 avisoDePago();
+
+
+
+// *SEGUNDO MODELO DE CONSULTOR DE EXPENSAS ONLINE CON OBJETOS*
+
+/* let expensasUFX = {
+	expensaOrdinaria = 16175,
+	expensaExtraordinaria = 11221,
+	expensasAysa = 1391,
+	deudaAnterior = 25698,
+	interesesPunitorios = 770,
+}
+*/
