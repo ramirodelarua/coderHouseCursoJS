@@ -1,7 +1,7 @@
 let expensaOrdinaria = parseInt(prompt("¿Cuánto pagás de expensas ordinarias? Ingresar sólo números enteros"),);
 let expensaExtraordinaria = parseInt(prompt("¿Cuánto pagás de expensas extraordinarias? Ingresar sólo números enteros"));
 let deudaAnterior= parseInt(prompt("¿Cuánto debés del mes anterior? Ingresar sólo números enteros"));
-let interesesPunitorios = parseInt(prompt("¿Cuánto te cobraron de intereses punitorios? Ingresar sólo números enteros"));
+let interesesPunitorios = parseInt(prompt("¿Cuál es el monto de los intereses punitorios? Ingresar sólo números enteros"));
 let sumaExpensasOrdinariasTotales = expensaOrdinaria + deudaAnterior + interesesPunitorios;
 let inquilinoOrPropietario = parseInt(prompt("Si sos propietario, ingresá 1 en el casillero, si sos inquilino, ingresá 2"));
 let sumaTotal = sumaExpensasOrdinariasTotales + expensaExtraordinaria;
@@ -14,21 +14,29 @@ function avisoDePago(){
 		alert("Usted ha ingresado una opción incorrecta. Por favor, pulse F5 y vuelva a consultar sus expensas")
 	}
 } avisoDePago();
-let preguntaDeuda = parseInt(prompt("¿Cuántos meses de expensas debés?"));
-function alertaDeuda(){
-	for(i = 0 , i <= 3 , i++){
-		if(preguntaDeuda > i){
-			alert("La unidad registra una deuda de más de tres (3) meses. En caso de no cancelarla en la inmediatez se intimará fehacientemente conforme a la ley vigente.");
-		}else if(preguntaDeuda > 0){
-			alert("La unidad no posee deuda significativa. Aún así les pedimos mantener al día las expensas para que el consorcio pueda cumplir con sus obligaciones.");
-		}else if(preguntaDeuda < 4){
-			alert("La unidad no posee deuda significativa. Aún así les pedimos mantener al día las expensas para que el consorcio pueda cumplir con sus obligaciones.");
-		}else{
-		alert("La unidad no presenta deudas.");
-	}}
-}
 
-alertaDeuda();
+function mostrarLiquidacionDeExpensas(expensaOrdinaria, expensaExtraordinaria, deudaAnterior, interesesPunitorios){
+	console.log("Expensas Comunes Ordinarias: $" + expensaOrdinaria);
+	console.log("Expensas Comunes Extraordinarias: $" + expensaExtraordinaria);
+	console.log("Saldo Anterior: $" + deudaAnterior);
+	console.log("Intereses Punitorios: $" + interesesPunitorios);	
+}
+mostrarLiquidacionDeExpensas(expensaOrdinaria, expensaExtraordinaria, deudaAnterior, interesesPunitorios);
+let mostrarLiquidacionTotal = 0;
+function totalLiquidacionDeExpensas(expensaOrdinaria, expensaExtraordinaria, deudaAnterior, interesesPunitorios){
+	for(i = 0 , i < (arguments.length - 1) , i++){
+		if(inquilinoOrPropietario === 1){
+			mostrarLiquidacionTotal = mostrarLiquidacionTotal + arguments[i];
+		}else if(inquilinoOrPropietario === 2){
+			mostrarLiquidacionTotal = mostrarLiquidacionTotal + arguments[i];
+			if(arguments[i] = 1){
+				continue;
+			}
+		}
+		console.log("Total a pagar por quien consulta: $" + mostrarLiquidacionTotal);
+	}
+}
+totalLiquidacionDeExpensas(expensaOrdinaria, expensaExtraordinaria, deudaAnterior, interesesPunitorios);
 
 // *SEGUNDO MODELO DE CONSULTOR DE EXPENSAS ONLINE CON OBJETOS*
 
