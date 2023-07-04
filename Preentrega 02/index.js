@@ -50,26 +50,26 @@ const propietarioLibertador1916UF10 = new Propietario("ERNESTINA", "GALLARDO", 1
 const propietarioLibertador1916UF11 = new Propietario("SAUL", "MENDEZ", 11, 9.04, 8.82, 0, 0);
 const propietarioLibertador1916UF12 = new Propietario("NEW HORIZON & ASOCIADOS", "", 12, 8.09, 8.17, 0, 0);
 
-// Gastos A, B, C y D del consorcio declarados en arrays
+// Gastos A, B, C y D del consorcio declarados en cada índice de un array
 
 // Consorcio Libertador 1916
 let consorcioLibertador1916gastosTotales = 0;
-let arrayConsorcioLibertador1916Gasto[0] = 300000;
-let arrayConsorcioLibertador1916Gasto[1] = 15000;
-let arrayConsorcioLibertador1916Gasto[2] = 60456;
-let arrayConsorcioLibertador1916Gasto[3] = 0;
+let arrayConsorcioLibertador1916Gasto[0] = 300000;  //Gastos A
+let arrayConsorcioLibertador1916Gasto[1] = 15000;   //Gastos B
+let arrayConsorcioLibertador1916Gasto[2] = 60456;   //Gastos C
+let arrayConsorcioLibertador1916Gasto[3] = 0;       //Gastos D
 
 // Consorcio Cucha Cucha 2281
 let consorcioCuchacucha2281gastosTotales = 0;
-let arrayConsorcioCuchacucha2281Gasto[0] = 100000;
-let arrayConsorcioCuchacucha2281Gasto[1] = 50000;
-let arrayConsorcioCuchacucha2281Gasto[2] = 0;
-let arrayConsorcioCuchacucha2281Gasto[3] = 0;
+let arrayConsorcioCuchacucha2281Gasto[0] = 100000;  //Gastos A
+let arrayConsorcioCuchacucha2281Gasto[1] = 50000;   //Gastos B
+let arrayConsorcioCuchacucha2281Gasto[2] = 0;       //Gastos C
+let arrayConsorcioCuchacucha2281Gasto[3] = 0;       //Gastos D
 
 function consorcioLibertador1916SumarExpensasTotales(){
     for(i=0 ; i < arrayConsorcioLibertador1916Gasto.length ; i++){
         if(arrayConsorcioLibertador1916Gasto !== 0){
-            consorcioLibertador1916GastosTotales = consorcioLibertador1916GastosTotales +arrayConsorcioLibertador1916Gasto[i];
+            consorcioLibertador1916GastosTotales = consorcioLibertador1916GastosTotales + arrayConsorcioLibertador1916Gasto[i];
         }else{
             arrayConsorcioLibertador1916Gasto.splice(i,1);
         }
@@ -89,6 +89,3 @@ function consorcioCuchacucha2281SumarExpensasTotales(){
     }
     return consorcioLibertador1916GastosTotales;
 }
-
-
-let sumarTodos = 
